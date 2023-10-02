@@ -1,5 +1,5 @@
 # AI Utils 
- Scripts and notebooks for generative AI
+ Python scripts and notebooks for generative AI
 
 # 1. API_img_gen
 
