@@ -5,7 +5,7 @@
 
 Address A1111 API, generative prompt creation for making batches of regularisation images. 
 Made with Dreambooth training in mind. Usecases may vary. 
-Inspired by [A1111 API] (https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/API)
+Inspired by [A1111 API](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/API)
 
 
 Few features.
