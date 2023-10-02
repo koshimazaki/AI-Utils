@@ -1,7 +1,7 @@
 # AI Utils 
  Scripts and notebooks for generative AI
 
-1. API_img_gen
+# 1. API_img_gen
 
 Address A1111 API, generative prompt creation for making batches of regularisation images. 
 Made with Dreambooth training in mind. Usecases may vary. 
