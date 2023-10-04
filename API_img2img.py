@@ -57,7 +57,6 @@ def get_payload(prompt, sampler, steps, dna, cfg, input_img_path):
         "outdir_samples": "./outputs/API-outputs",
         "info": {
             "dna": dna,
-            "image_used":""
         }
     }
 
@@ -150,7 +149,7 @@ def main():
     
     base_url = 'http://127.0.0.1:7860'
     save_path = "./outputs/API-outputs"
-    state_json_path = "./outputs/API-outputs/counter_and_prompt.json"
+    state_json_path = "./outputs/API-outputs/counter_img2img.json"
     #  source_folder = "./source_images"  # Path to the source images folder
     source_folder = args.source_folder  # Get the source folder from the command line argument
 
