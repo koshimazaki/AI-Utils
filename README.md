@@ -23,7 +23,7 @@ Few features.
 
 # 2. API_img_gen
  
- Needs API fork to accept local files on M1 Mac. Usuful for generating variaty of images based on input and sample data.
+ Needs A1111 API fork to accept local files on M1 Mac, still WIP. Usuful for generating variaty of images based on input and sample data.
 
 Few features
 - Checks the folder save bataches of variable amount of images per image in the folder.
