@@ -21,5 +21,12 @@ Few features.
 - **Metadata Saving**: Each generated image is accompanied by a JSON file containing its metadata, including its unique DNA.
 - **CLI Output**: Produces informative output in the command-line interface, allowing for real-time monitoring.
 
+# 2. API_img_gen
+ 
+ Needs API fork to accept local files on M1 Mac. Usuful for generating variaty of images based on input and sample data.
 
-
+Few features
+- Checks the folder save bataches of variable amount of images per image in the folder.
+- Uses random combination of prompts. 
+- Choice of cfg scale settings, sampler, steps combo and generates random seed, subseed.
+- Settings are saved to json along with unique DNA of the settings used similar to API_img_gen.
