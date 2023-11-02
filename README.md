@@ -21,7 +21,7 @@ Few features.
 - **Metadata Saving**: Each generated image is accompanied by a JSON file containing its metadata, including its unique DNA.
 - **CLI Output**: Produces informative output in the command-line interface, allowing for real-time monitoring.
 
-# 2. API_img_gen
+# 2. API_img2img
  
  Needs A1111 API fork to accept local files on M1 Mac, still WIP. Usuful for generating variaty of images based on input and sample data.
 
