@@ -1,0 +1,5 @@
+curl -X POST https://w6bv4usdv9ryd9-7860.proxy.runpod.net/deforum_api/batches \
+     -H "Content-Type: application/json" \
+     -d @combined_deforum_S.json
+
+// call it from runpod 

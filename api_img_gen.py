@@ -55,8 +55,8 @@ def get_payload(prompt, sampler, steps, dna):
 
 def generate_prompts():
     elements = ["wood", "metal", "liquid", "plastic", "crystals"]
-    characters = ["Glitchyokai", "Drippyworld", "Hovering Glitch Toy", "metaverse",  "Mythic Guardian"]
-    environments = ["fiordland", "iceland", "oasis", "rural Thailand", "volcano"]
+    characters = ["Glitchyokai", "Drippyworld", "Hovering Glitch Toy", "metaverse",  "Mythic Guardian","DesignerToy"]
+    environments = ["fiordland", "iceland", "oasis", "rural", "volcano"]
     aesthetics = ["cyberpunk", "generative art", "indigenous art", "glitch art", "3D modeling"]
     styles = ["Computer-generated Imagery", "video art", "anime", "comic"]
     artists = ["Alberto Seveso", "Bernie Wrightson", "Brian Sum", "Georg Jensen", "teamLab", "Yoshiyuki Tomino", "Masamune Shirow", "Takashi Murakami", "Tristan Eaton"]
