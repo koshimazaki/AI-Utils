@@ -30,3 +30,43 @@ Few features
 - Uses random combination of prompts. 
 - Choice of cfg scale settings, sampler, steps combo and generates random seed, subseed.
 - Settings are saved to json along with unique DNA of the settings used similar to API_img_gen.
+
+# 3. image2image Init 
+
+This Python script is designed for generating initial images for animations and blending them together, leveraging a local server API. It operates within a structured workflow that involves selecting source images, invoking an image-to-image API, and systematically storing the output along with configuration details. Here's a structured overview:
+
+- Initial Setup: It initializes by setting up a server URL and output directory, ensuring the latter's existence.
+- Batch Management: Implements functionality to determine the next batch number for organizing outputs, enhancing scalability and organization.
+- Image Processing: Utilizes a series of functions to encode images to Base64 for API transmission, decode API responses, and save both images and their settings in a specified directory structure. This approach facilitates traceability and reproducibility.
+- API Interaction: Central to its functionality is the call_api method, which handles communication with a specified image-to-image API endpoint. This method sends a payload containing the initial image (in Base64 format) and parameters dictating the transformation characteristics.
+- Dynamic Parameterization: The script supports dynamic input for transformation parameters, such as prompts, denoising strength, model specifications, and image dimensions. This flexibility allows for a wide range of creative outputs based on the source material.
+- Iterative Processing: Iterates through a directory of source images, applying the transformation to each and incrementally saving the results. It ensures each image is processed and stored with a unique identifier, alongside a JSON file capturing the settings used for generation.
+- Efficiency and Traceability: By printing progress messages and systematically organizing outputs, the script ensures efficiency in processing and ease in tracing outputs back to their source images and settings.
+
+In essence, this script is a comprehensive tool for automated generation and blending of images for animation projects, optimized for ease of use, scalability, and creative flexibility. It's akin to a modular system that accepts varied input, applies complex transformations via API interaction, and outputs a structured collection of transformed images ready for further use in animation workflows.
+
+# 4. Generate 
+
+Configuration and NFT Metadata Generation for Deforum API
+
+This Python script is designed to automate the generation of configuration files for the Deforum API and NFT (Non-Fungible Token) metadata, facilitating the creation of digital art with predefined traits and properties. The script follows a multi-step process to ensure each piece of digital art is unique and its characteristics are well-documented for blockchain minting. Below is a detailed breakdown of its core functionalities:
+
+- **Template Initialization**: Establishes base templates for Deforum API settings and NFT DNA to set the stage for dynamic configuration.
+
+- **Attribute and URL Mapping**: Utilizes a `script_data` dictionary for mapping specific attributes (movement, material, morph type) to URLs, defining the NFT characteristics and resource locations.
+
+- **Configuration Generation**: Through the `generate_json_files` function, it iterates over images and script data to create Deforum API settings and NFT DNA configurations, embedding details such as dimensions, animation prompts, image paths, and NFT attributes.
+
+- **Dynamic Parameter Inclusion**: Dynamically incorporates various parameters into the Deforum configuration, including dimensions, seeds, sampler types, and animation settings, to guide the processing of each image.
+
+- **Batch Processing and Output Management**: Assigns unique batch and creature names to configurations for easy identification and management, supporting scalable digital art production.
+
+- **NFT Metadata Customization**: Generates customized NFT metadata for each image, including name, image URL, and a unique DNA string, facilitating the blockchain minting process.
+
+- **File Output**: Saves the generated configurations and NFT metadata as JSON files, preparing for blockchain integration and digital art minting.
+
+This script streamlines the digital art creation process, from configuring the Deforum API for specific artistic outputs to preparing NFT metadata for minting, enhancing both productivity and creativity in digital art distribution.
+
+
+
+
