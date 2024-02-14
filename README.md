@@ -67,6 +67,10 @@ This Python script is designed to automate the generation of configuration files
 
 This script streamlines the digital art creation process, from configuring the Deforum API for specific artistic outputs to preparing NFT metadata for minting, enhancing both productivity and creativity in digital art distribution.
 
+# 5. Combine 
 
+Combining Deforum Configuration Files
 
+This utility script is crafted to streamline the process of combining multiple JSON configuration files, specifically designed for Deforum API settings, into a single consolidated file. This automation facilitates efficient management and utilization of multiple configuration settings for digital art generation. Below is a step-by-step explanation of its operations:
 
+This approach is particularly useful for projects where digital art generation involves multiple configurations, allowing for streamlined setup and execution of the Deforum API with a unified configuration file.
