@@ -71,6 +71,6 @@ This script streamlines the digital art creation process, from configuring the D
 
 Combining Deforum Configuration Files
 
-This utility script is crafted to streamline the process of combining multiple JSON configuration files, specifically designed for Deforum API settings, into a single consolidated file. This automation facilitates efficient management and utilization of multiple configuration settings for digital art generation. Below is a step-by-step explanation of its operations:
+This utility script is crafted to streamline the process of combining multiple JSON configuration files, specifically designed for Deforum API settings, into a single consolidated file. This allows generating multiple files as a single job.
 
 This approach is particularly useful for projects where digital art generation involves multiple configurations, allowing for streamlined setup and execution of the Deforum API with a unified configuration file.
