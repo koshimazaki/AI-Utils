@@ -1,5 +1,5 @@
 # AI Utils 
- Python scripts and notebooks for generative AI
+Python scripts and Jupyter notebooks designed to streamline various tasks in generative AI, specifically focused on image generation, animation, and setting up models.
 
 # 1. API_img_gen
 
@@ -74,3 +74,16 @@ Combining Deforum Configuration Files
 This utility script is crafted to streamline the process of combining multiple JSON configuration files, specifically designed for Deforum API settings, into a single consolidated file. This allows generating multiple files as a single job.
 
 This approach is particularly useful for projects where digital art generation involves multiple configurations, allowing for streamlined setup and execution of the Deforum API with a unified configuration file.
+
+# 6. ComfyUI models install. 
+
+Jupyter Notebook for installing ComfyUI models on Runpods. It takes about 5-10 minutes to download all the models required for AnimateDiff to work on ComfyUI.
+Note: ComfyUI and Comfy Manager need to be installed separately.
+
+Example for Controlnet install command aria2c, a high-speed download utility:
+
+```!aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/lllyasviel/sd_control_collection/resolve/main/sai_xl_canny_256lora.safetensors?download=true -d /workspace/ComfyUI/models/controlnet -o sai_xl_canny_256lora.safetensors```
+
+Here Dreamshaper: 
+
+```!aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://civitai.com/api/download/models/128713 -d /workspace/ComfyUI/models/checkpoints -o Dreamshaper_8.safetensors```
