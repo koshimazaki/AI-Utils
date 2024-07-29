@@ -45,7 +45,7 @@ Workflow Overview:
 - Iterative Processing: Processes and saves each image from the source directory with a unique identifier and JSON file containing the generation settings.
 - Efficiency and Traceability: Prints progress messages and organizes outputs for easy tracing back to source images and settings.
 
-In essence, this script is a comprehensive tool for automated image generation, useful for both general image creation and animation projects. It is optimized for ease of use, scalability, and creative flexibility.
+In essence, this script is a comprehensive tool for automated image generation, useful for both general image creation and animation projects. It is optimised for ease of use, scalability, and creative flexibility.
 
 # 4. Generate 
 
