@@ -5,8 +5,8 @@ Python scripts and Jupyter notebooks designed to streamline various tasks in gen
 
 Address A1111 API, generative prompt creation for making batches of regularisation images. 
 Made with Dreambooth training in mind. Usecases may vary. 
-Inspired by [A1111 API](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/API)
-Dr FurkanGozukara [Dreambooth and model training tutorials](https://github.com/FurkanGozukara/Stable-Diffusion/blob/main/Tutorials/How-To-Do-SDXL-DreamBooth-Training-With-Best-Settings.md) and Banodoco [Stearable Motion](https://github.com/banodoco/Steerable-Motion). 
+Inspired by and useful for [A1111 API](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/API)
+Dr FurkanGozukara [Dreambooth and model training tutorials](https://github.com/FurkanGozukara/Stable-Diffusion/blob/main/Tutorials/How-To-Do-SDXL-DreamBooth-Training-With-Best-Settings.md) and Banodoco [Steerable Motion](https://github.com/banodoco/Steerable-Motion). 
 
 
 Few features.
