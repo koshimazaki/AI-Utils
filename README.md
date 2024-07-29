@@ -1,5 +1,5 @@
 # AI Utils 
- Python scripts and notebooks for generative AI
+Python scripts and Jupyter notebooks designed to streamline various tasks in generative AI, specifically focused on image generation, animation, and setting up models.
 
 # 1. API_img_gen
 
