@@ -33,17 +33,19 @@ Few features
 
 # 3. image2image Init 
 
-This Python script is designed for generating initial images for animations and blending them together, leveraging a local server API. It operates within a structured workflow that involves selecting source images, invoking an image-to-image API, and systematically storing the output along with configuration details. Here's a structured overview:
+This Python script is designed for generating images, including initial images for animations and blending them together, using a local server API. It follows a structured workflow to select source images, call an image-to-image API, and save the results along with configuration details.
 
-- Initial Setup: It initializes by setting up a server URL and output directory, ensuring the latter's existence.
-- Batch Management: Implements functionality to determine the next batch number for organizing outputs, enhancing scalability and organization.
-- Image Processing: Utilizes a series of functions to encode images to Base64 for API transmission, decode API responses, and save both images and their settings in a specified directory structure. This approach facilitates traceability and reproducibility.
-- API Interaction: Central to its functionality is the call_api method, which handles communication with a specified image-to-image API endpoint. This method sends a payload containing the initial image (in Base64 format) and parameters dictating the transformation characteristics.
-- Dynamic Parameterization: The script supports dynamic input for transformation parameters, such as prompts, denoising strength, model specifications, and image dimensions. This flexibility allows for a wide range of creative outputs based on the source material.
-- Iterative Processing: Iterates through a directory of source images, applying the transformation to each and incrementally saving the results. It ensures each image is processed and stored with a unique identifier, alongside a JSON file capturing the settings used for generation.
-- Efficiency and Traceability: By printing progress messages and systematically organizing outputs, the script ensures efficiency in processing and ease in tracing outputs back to their source images and settings.
+Workflow Overview:
 
-In essence, this script is a comprehensive tool for automated generation and blending of images for animation projects, optimized for ease of use, scalability, and creative flexibility. It's akin to a modular system that accepts varied input, applies complex transformations via API interaction, and outputs a structured collection of transformed images ready for further use in animation workflows.
+- Initial Setup: Sets up the server URL and output directory.
+- Batch Management: Determines the next batch number for organizing outputs.
+- Image Processing: Encodes images to Base64 for API transmission, decodes API responses, and saves images and settings in a specified directory.
+- API Interaction: Uses the call_api method to communicate with the image-to-image API, sending a payload with the initial image and transformation parameters.
+- Dynamic Parameterization: Supports dynamic input for transformation parameters, such as prompts, denoising strength, model specifications, and image dimensions.
+- Iterative Processing: Processes and saves each image from the source directory with a unique identifier and JSON file containing the generation settings.
+- Efficiency and Traceability: Prints progress messages and organizes outputs for easy tracing back to source images and settings.
+
+In essence, this script is a comprehensive tool for automated image generation, useful for both general image creation and animation projects. It is optimized for ease of use, scalability, and creative flexibility.
 
 # 4. Generate 
 
