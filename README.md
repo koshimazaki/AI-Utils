@@ -80,9 +80,10 @@ This approach is particularly useful for projects where digital art generation i
 Jupyter Notebook for installing ComfyUI models on Runpods. It takes about 5-10 minutes to download all the models required for AnimateDiff to work on ComfyUI.
 Note: ComfyUI and Comfy Manager need to be installed separately.
 
-Example for Controlnet install command using aria
+Example for Controlnet install command aria2c, a high-speed download utility:
+
 ```!aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/lllyasviel/sd_control_collection/resolve/main/sai_xl_canny_256lora.safetensors?download=true -d /workspace/ComfyUI/models/controlnet -o sai_xl_canny_256lora.safetensors```
 
-Here Dreamshaper 
+Here Dreamshaper: 
 
 ```!aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://civitai.com/api/download/models/128713 -d /workspace/ComfyUI/models/checkpoints -o Dreamshaper_8.safetensors```
