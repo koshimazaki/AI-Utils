@@ -92,4 +92,4 @@ Here Dreamshaper:
 
 # 6b. ComfyUI FLUX models install. 
 
-Added all needed FLUX models in one install. This is optimised for Comfy UI tamplete on runpod. Adjust file paths as needed. Extreme speed Community Cloud network recommended or equivlent for quick download. These are large models.   
+Added all needed FLUX models in one install. This is optimised for Comfy UI tamplete on runpod. Adjust file paths as needed. Extreme speed Community Cloud network recommended or equivalent for quick download. These are large models.   
