@@ -89,3 +89,7 @@ Example for Controlnet install command aria2c, a high-speed download utility:
 Here Dreamshaper: 
 
 ```!aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://civitai.com/api/download/models/128713 -d /workspace/ComfyUI/models/checkpoints -o Dreamshaper_8.safetensors```
+
+# 6b. ComfyUI FLUX models install. 
+
+Added all needed FLUX models in one install. This is optimised for Comfy UI tamplete on runpod. Adjust file paths as needed. Extreme speed Community Cloud network recommended or equivlent for quick download. These are large models.   
