@@ -93,3 +93,25 @@ Here Dreamshaper:
 # 6b. ComfyUI FLUX models install. 
 
 Added all needed FLUX models in one install. This is optimised for Comfy UI tamplete on runpod. Adjust file paths as needed. Extreme speed Community Cloud network recommended or equivalent for quick download. These are large models.   
+
+# 7. WAN Video ComfyUI Setup Script
+
+Automated bash script for installing WAN (Video Generation) models and ComfyUI setup. Optimized for RunPod deployments with interactive menu system for component selection.
+
+Key features:
+- **Complete ComfyUI Installation**: Automated setup with virtual environment and GPU-optimized PyTorch
+- **WAN Model Management**: Downloads WAN 2.1 T2V models and ControlNet depth variants
+- **Custom Node Integration**: Installs WAN-specific nodes and utility packages
+- **Vace-Warper Models**: Optimized fp8 quantized models for reduced VRAM usage
+- **GPU Compatibility**: Automatic detection with RTX 5080/5090 support
+- **Interactive Menu**: 10 installation options including "Install All" for complete setup
+- **Error Handling**: Robust installation with fallback mirror support
+
+Setup:
+```bash
+chmod +x run_wan.sh
+export HF_TOKEN='hf_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+./run_wan.sh
+```
+
+Requirements: CUDA GPU (16GB+ VRAM recommended), 50GB+ storage, Hugging Face token for model access. 
