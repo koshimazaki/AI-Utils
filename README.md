@@ -12,10 +12,10 @@ Related open source repos and public case studies are listed here as a map of th
 | --- | --- | --- |
 | [AI-Utils](https://github.com/koshimazaki/AI-Utils) | This repo: Python scripts, notebooks, A1111/Deforum history, RunPod/ComfyUI setup, WAN install tooling | Active archive |
 | [ComfyUI-Koshi-Nodes](https://github.com/koshimazaki/ComfyUI-Koshi-Nodes) | ComfyUI nodes for FLUX motion, shaders, procedural visuals, OLED/SIDKIT export | Open source |
-| [Deforum2026](https://github.com/koshimazaki/Deforum2026) | Python-first FLUX/Klein animation workflows and Deforum-style motion pipelines | Open source |
+| [Koshi Flux](https://github.com/koshimazaki/Koshi-Flux) | Python-first FLUX/Klein animation workflows and Deforum-style motion pipelines | Open source |
 | [VibeComfy](https://github.com/peteromallet/VibeComfy) | Agentic interface for ComfyUI workflow authoring, editing, conversion, templates, and local/RunPod runtimes | Open source contribution |
 | [ComfyUI Frontend Health](https://github.com/koshimazaki/comfy-frontend-health) | Repo-specific quality stack for ComfyUI frontend, curated on top of `desloppify` with Claude Code agents, Vue detectors, and pre-PR gates | Open source |
-| [Muzed](https://github.com/koshimazaki/Mused) | LTX-2 motion LoRA production pipeline, H200 training, dance/video workflow | Open source |
+| [Muzed](https://github.com/koshimazaki/Mused) | LTX-2 motion LoRA, Kling 3.0 motion transfer production pipeline, H200 training, dance/video workflow | Open source |
 | [Muzed production pipeline](https://muzed.pages.dev/#production) | Public write-up of the production workflow, model training, and tools used | Case study |
 | [Koshi Vox](https://github.com/koshimazaki/koshi-vox) | Voice-to-text terminal workflow for Claude Code and agentic coding sessions | Open source |
 | [LMStudio-MCP-Bridge](https://github.com/koshimazaki/LMStudio-MCP-Bridge) | MCP bridge that lets Claude Code/Desktop call local LM Studio models for docs, summaries, code analysis, refactors, and tests | Open source |
