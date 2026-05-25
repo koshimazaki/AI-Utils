@@ -1,117 +1,139 @@
-# AI Utils 
-Python scripts and Jupyter notebooks designed to streamline various tasks in generative AI, specifically focused on image generation, animation, and setting up models.
+# AI Tooling for Agents and Audiovisual Media
 
-# 1. API_img_gen
+A living archive of Python scripts, Jupyter notebooks, ComfyUI setup helpers, RunPod workflows, and generative media utilities built across 2023-2026.
 
-Address A1111 API, generative prompt creation for making batches of regularisation images. 
-Made with Dreambooth training in mind. Usecases may vary. 
-Inspired by [A1111 API](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/API)
-Dr FurkanGozukara [Dreambooth and model training tutorials](https://github.com/FurkanGozukara/Stable-Diffusion/blob/main/Tutorials/How-To-Do-SDXL-DreamBooth-Training-With-Best-Settings.md)
+This repository contains the notebooks and scripts listed below. It started with A1111 and Deforum production scripts, then expanded into ComfyUI, FLUX/LTX/WAN video workflows and cloud GPU setup. The older scripts are kept because they show the working history behind the current audiovisual AI stack: prompt generation, batch production, metadata, model setup, video pipelines, and cloud inference infrastructure.
 
-Few features.
-- **Prompt Generation**: To dynamically generate a list of prompts based on combinations of elements, characters, environments, aesthetics, styles, artists, cameras, and points of view.
-- **Image Generation**: To use the generated prompts to produce images via A1111 API and save these images.
-- **DNA Assigning**: To create a unique 'DNA' string for each image based on its indices in the original lists, which is saved as metadata.
-- **State Management**: To keep track of the number of generated images and persist this information between script runs.
-- **Sampler Selection**: Independent random selection of a sampler and step size for image generation from a predefined list.
+Related open source repos and public case studies are listed here as a map of the broader tooling ecosystem.
 
-- **Maximum Generations**: Ability to set a maximum number of image generations.
-- **Random Sampling**: Uses random shuffling to generate unique combinations of prompts.
-- **Error Handling**: Exception handling for API request failures and other issues.
-- **Metadata Saving**: Each generated image is accompanied by a JSON file containing its metadata, including its unique DNA.
-- **CLI Output**: Produces informative output in the command-line interface, allowing for real-time monitoring.
+## Open Source Tooling Ecosystem
 
-# 2. API_img2img
- 
- Needs A1111 API fork to accept local files on M1 Mac, still WIP. Usuful for generating variaty of images based on input and sample data.
+| Tool / repo | Focus | Status |
+| --- | --- | --- |
+| [AI-Utils](https://github.com/koshimazaki/AI-Utils) | This repo: Python scripts, notebooks, A1111/Deforum history, RunPod/ComfyUI setup, WAN install tooling | Active archive |
+| [ComfyUI-Koshi-Nodes](https://github.com/koshimazaki/ComfyUI-Koshi-Nodes) | ComfyUI nodes for FLUX motion, shaders, procedural visuals, OLED/SIDKIT export | Open source |
+| [Deforum2026](https://github.com/koshimazaki/Deforum2026) | Python-first FLUX/Klein animation workflows and Deforum-style motion pipelines | Open source |
+| [VibeComfy](https://github.com/peteromallet/VibeComfy) | Agentic interface for ComfyUI workflow authoring, editing, conversion, templates, and local/RunPod runtimes | Open source contribution |
+| [ComfyUI Frontend Health](https://github.com/koshimazaki/comfy-frontend-health) | Repo-specific quality stack for ComfyUI frontend, curated on top of `desloppify` with Claude Code agents, Vue detectors, and pre-PR gates | Open source |
+| [Muzed](https://github.com/koshimazaki/Mused) | LTX-2 motion LoRA production pipeline, H200 training, dance/video workflow | Open source |
+| [Muzed production pipeline](https://muzed.pages.dev/#production) | Public write-up of the production workflow, model training, and tools used | Case study |
+| [Koshi Vox](https://github.com/koshimazaki/koshi-vox) | Voice-to-text terminal workflow for Claude Code and agentic coding sessions | Open source |
+| [LMStudio-MCP-Bridge](https://github.com/koshimazaki/LMStudio-MCP-Bridge) | MCP bridge that lets Claude Code/Desktop call local LM Studio models for docs, summaries, code analysis, refactors, and tests | Open source |
+| [tailscale-runpod](https://github.com/koshimazaki/tailscale-runpod) | Claude Skill for SSH into RunPod, Vast.ai, and cloud GPU instances via Tailscale | Open source |
 
-Few features
-- Checks the folder save bataches of variable amount of images per image in the folder.
-- Uses random combination of prompts. 
-- Choice of cfg scale settings, sampler, steps combo and generates random seed, subseed.
-- Settings are saved to json along with unique DNA of the settings used similar to API_img_gen.
+## Repository Utilities
 
-# 3. image2image Init 
+### 1. API_img_gen
 
-This Python script is designed for generating images, including initial images for animations and blending them together, using a local server API. It follows a structured workflow to select source images, call an image-to-image API, and save the results along with configuration details.
+Addresses the A1111 API for generative prompt creation and batch generation of regularisation images. Built with DreamBooth training in mind, though the approach can be adapted for other dataset generation workflows.
 
-Workflow Overview:
+Inspired by:
+- [A1111 API](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/API)
+- Dr Furkan Gozukara's [DreamBooth and model training tutorials](https://github.com/FurkanGozukara/Stable-Diffusion/blob/main/Tutorials/How-To-Do-SDXL-DreamBooth-Training-With-Best-Settings.md)
 
-- Initial Setup: Sets up the server URL and output directory.
-- Batch Management: Determines the next batch number for organizing outputs.
-- Image Processing: Encodes images to Base64 for API transmission, decodes API responses, and saves images and settings in a specified directory.
-- API Interaction: Uses the call_api method to communicate with the image-to-image API, sending a payload with the initial image and transformation parameters.
-- Dynamic Parameterization: Supports dynamic input for transformation parameters, such as prompts, denoising strength, model specifications, and image dimensions.
-- Iterative Processing: Processes and saves each image from the source directory with a unique identifier and JSON file containing the generation settings.
-- Efficiency and Traceability: Prints progress messages and organizes outputs for easy tracing back to source images and settings.
+Features:
+- **Prompt generation:** Dynamically generates prompt combinations from elements, characters, environments, aesthetics, styles, artists, cameras, and points of view.
+- **Image generation:** Uses generated prompts to produce images via the A1111 API and save them locally.
+- **DNA assignment:** Creates a unique DNA string for each image from source-list indices and saves it as metadata.
+- **State management:** Tracks generated image count and persists state between script runs.
+- **Sampler selection:** Randomly selects sampler and step-size combinations from predefined options.
+- **Maximum generations:** Allows a generation cap for controlled batches.
+- **Random sampling:** Uses shuffled combinations to avoid repeated prompt sets.
+- **Error handling:** Handles API request failures and other runtime issues.
+- **Metadata saving:** Saves a JSON file beside each generated image with prompt/settings metadata.
+- **CLI output:** Prints progress and state in the command line for long-running jobs.
 
-In essence, this script is a comprehensive tool for automated image generation, useful for both general image creation and animation projects. It is optimised for ease of use, scalability, and creative flexibility.
+### 2. API_img2img
 
-# 4. Generate 
+Uses an A1111 image-to-image API workflow for generating variations from input and sample data. Originally tested against a fork that accepted local files on M1 Mac.
 
-Configuration and NFT Metadata Generation for Deforum API
+Features:
+- Checks a source folder and saves batches of generated images per input image.
+- Uses random prompt combinations.
+- Randomises CFG scale, sampler, steps, seed, and subseed combinations.
+- Saves settings to JSON with a unique DNA string, matching the API_img_gen traceability pattern.
 
-This Python script is designed to automate the generation of configuration files for the Deforum API and NFT (Non-Fungible Token) metadata, facilitating the creation of digital art with predefined traits and properties. The script follows a multi-step process to ensure each piece of digital art is unique and its characteristics are well-documented for blockchain minting. Below is a detailed breakdown of its core functionalities:
+### 3. image2image Init
 
-- **Template Initialization**: Establishes base templates for Deforum API settings and NFT DNA to set the stage for dynamic configuration.
+Python workflow for generating images, animation starting points, and blended image sets through a local server API.
 
-- **Attribute and URL Mapping**: Utilizes a `script_data` dictionary for mapping specific attributes (movement, material, morph type) to URLs, defining the NFT characteristics and resource locations.
+Workflow:
+- **Initial setup:** Sets server URL and output directory.
+- **Batch management:** Determines the next batch number for organised outputs.
+- **Image processing:** Encodes images to Base64 for API transmission, decodes responses, and saves outputs plus settings.
+- **API interaction:** Sends payloads with initial images and transformation parameters.
+- **Dynamic parameters:** Supports prompts, denoising strength, model settings, and image dimensions.
+- **Iterative processing:** Processes source-directory images and writes per-image JSON settings.
+- **Traceability:** Organises output so generated images can be traced back to source images and settings.
 
-- **Configuration Generation**: Through the `generate_json_files` function, it iterates over images and script data to create Deforum API settings and NFT DNA configurations, embedding details such as dimensions, animation prompts, image paths, and NFT attributes.
+### 4. Generate
 
-- **Dynamic Parameter Inclusion**: Dynamically incorporates various parameters into the Deforum configuration, including dimensions, seeds, sampler types, and animation settings, to guide the processing of each image.
+Configuration and NFT metadata generation for Deforum API workflows.
 
-- **Batch Processing and Output Management**: Assigns unique batch and creature names to configurations for easy identification and management, supporting scalable digital art production.
+This script automates generation of Deforum API settings and NFT metadata so batches of audiovisual digital art can be configured, rendered, and tracked consistently.
 
-- **NFT Metadata Customization**: Generates customized NFT metadata for each image, including name, image URL, and a unique DNA string, facilitating the blockchain minting process.
+Core functions:
+- **Template initialisation:** Creates base templates for Deforum settings and NFT DNA.
+- **Attribute and URL mapping:** Uses a script data dictionary to map movement, material, and morph traits to source URLs.
+- **Configuration generation:** Iterates over source images and script data to create Deforum settings and NFT DNA files.
+- **Dynamic parameter inclusion:** Inserts dimensions, seeds, sampler types, animation settings, image paths, and prompts.
+- **Batch processing:** Assigns batch and creature names for scalable production.
+- **NFT metadata customisation:** Writes name, image URL, traits, and DNA strings for minting.
+- **File output:** Saves generated configurations and metadata as JSON files.
 
-- **File Output**: Saves the generated configurations and NFT metadata as JSON files, preparing for blockchain integration and digital art minting.
+### 5. Combine
 
-This script streamlines the digital art creation process, from configuring the Deforum API for specific artistic outputs to preparing NFT metadata for minting, enhancing both productivity and creativity in digital art distribution.
+Utility for combining multiple Deforum JSON configuration files into a single consolidated job file.
 
-# 5. Combine 
+This is useful when a project needs multiple generated configurations but the renderer expects a unified configuration input.
 
-Combining Deforum Configuration Files
+### 6. ComfyUI Models Install
 
-This utility script is crafted to streamline the process of combining multiple JSON configuration files, specifically designed for Deforum API settings, into a single consolidated file. This allows generating multiple files as a single job.
+Jupyter notebook for installing ComfyUI models on RunPod. The notebook was built for quickly downloading models required for AnimateDiff and related ComfyUI workflows.
 
-This approach is particularly useful for projects where digital art generation involves multiple configurations, allowing for streamlined setup and execution of the Deforum API with a unified configuration file.
+ComfyUI and ComfyUI Manager need to be installed separately.
 
-# 6. ComfyUI models install. 
+Example ControlNet install command using `aria2c`:
 
-Jupyter Notebook for installing ComfyUI models on Runpods. It takes about 5-10 minutes to download all the models required for AnimateDiff to work on ComfyUI.
-Note: ComfyUI and Comfy Manager need to be installed separately.
+```bash
+aria2c --console-log-level=error -c -x 16 -s 16 -k 1M \
+  "https://huggingface.co/lllyasviel/sd_control_collection/resolve/main/sai_xl_canny_256lora.safetensors?download=true" \
+  -d /workspace/ComfyUI/models/controlnet \
+  -o sai_xl_canny_256lora.safetensors
+```
 
-Example for Controlnet install command aria2c, a high-speed download utility:
+Example Dreamshaper install:
 
-```!aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/lllyasviel/sd_control_collection/resolve/main/sai_xl_canny_256lora.safetensors?download=true -d /workspace/ComfyUI/models/controlnet -o sai_xl_canny_256lora.safetensors```
+```bash
+aria2c --console-log-level=error -c -x 16 -s 16 -k 1M \
+  "https://civitai.com/api/download/models/128713" \
+  -d /workspace/ComfyUI/models/checkpoints \
+  -o Dreamshaper_8.safetensors
+```
 
-Here Dreamshaper: 
+### 6b. ComfyUI FLUX Models Install
 
-```!aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://civitai.com/api/download/models/128713 -d /workspace/ComfyUI/models/checkpoints -o Dreamshaper_8.safetensors```
+Notebook for installing FLUX model dependencies into a RunPod ComfyUI template. Paths may need adjustment depending on the image/template used. Fast community cloud networking or equivalent bandwidth is recommended because the model files are large.
 
-# 6b. ComfyUI FLUX models install. 
+### 7. WAN Video ComfyUI Setup Script
 
-Added all needed FLUX models in one install. This is optimised for Comfy UI tamplete on runpod. Adjust file paths as needed. Extreme speed Community Cloud network recommended or equivalent for quick download. These are large models.   
+Automated bash script for installing WAN video generation models and ComfyUI setup on RunPod.
 
-# 7. WAN Video ComfyUI Setup Script
-
-Automated bash script for installing WAN (Video Generation) models and ComfyUI setup. Optimized for RunPod deployments with interactive menu system for component selection.
-
-Key features:
-- **Complete ComfyUI Installation**: Automated setup with virtual environment and GPU-optimized PyTorch
-- **WAN Model Management**: Downloads WAN 2.1 T2V models and ControlNet depth variants
-- **Custom Node Integration**: Installs WAN-specific nodes and utility packages
-- **Vace-Warper Models**: Optimized fp8 quantized models for reduced VRAM usage
-- **GPU Compatibility**: Automatic detection with RTX 5080/5090 support
-- **Interactive Menu**: 10 installation options including "Install All" for complete setup
-- **Error Handling**: Robust installation with fallback mirror support
+Features:
+- **Complete ComfyUI installation:** Automated setup with virtual environment and GPU-optimised PyTorch.
+- **WAN model management:** Downloads WAN 2.1 T2V models and ControlNet depth variants.
+- **Custom node integration:** Installs WAN-specific nodes and utility packages.
+- **Vace-Warper models:** Uses optimised fp8 quantised models for reduced VRAM usage.
+- **GPU compatibility:** Includes automatic detection with RTX 5080/5090 support.
+- **Interactive menu:** Ten installation options including `Install All`.
+- **Error handling:** Robust install flow with fallback mirror support.
 
 Setup:
+
 ```bash
 chmod +x run_wan.sh
-export HF_TOKEN='hf_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+export HF_TOKEN="hf_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 ./run_wan.sh
 ```
 
-Requirements: CUDA GPU (16GB+ VRAM recommended), 50GB+ storage, Hugging Face token for model access. 
+Requirements: CUDA GPU, 16GB+ VRAM recommended, 50GB+ storage, and a Hugging Face token for gated model access.
